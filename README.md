@@ -1,2 +1,4 @@
 # Big-data-projects
-These project were homeworks from the course "Big data computing". The main focus of these homeworks were to understand how to take advantage of parallelism with Apache Spark.
+These project were homeworks from the course "Big data computing". The main focus of these homeworks were to understand how to take advantage of parallelism with Apache Spark. For each homework there is a .txt file that describes what was the exact task and each homework has a dataset file associated to test the correctness. The first homework is more general and was intended to first collect the raw data into an RDD and then implement on it some pyspark methods: 1) mapPartitionsToPair combined with groupByKey and mapValues 2) map combined with reduceByKey.
+The second homework was assigned to implement a 3-approximation sequential algorithm proposed by Charikar et al. for k-center with z outliers.
+The third homework is a pyspark program that we run on CloudVeneto cluster that implements a 2-round coreset-based MapReduce algorithm for k-center with z outliers. 
