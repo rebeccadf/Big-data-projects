@@ -1,0 +1,10 @@
+In this homework, you will run a Spark program on the CloudVeneto cluster. The core of the Spark program will be the implementation of 2-round coreset-based MapReduce 
+algorithm for k-center with z outliers, which works as follows: in Round 1, separately for each partition of the dataset, a weighted coreset of k+z+1 points is computed,
+where the weight assigned to a coreset point p is the number of points in the partition which are closest to p (ties broken arbitrarily);
+in Round 2, the L weighted coresets (one from each partition) are gathered into one weighted coreset of size (k+z+1)*L, 
+and one reducer runs the sequential algorithm developed for Homework 2 (SeqWeightedOutliers) on this weighted coreset to extract the final solution. 
+In the homework you will test the accuracy of the solution and the scalability of the various steps.
+-Insert the code for SeqWeightedOuliers from your Homework 2.
+-Complete Round 2 of MR_kCenterOutliers to extract and return the final solution. IMPORTANT: you must run SeqWeightedOutliers on the weighted coreset using alpha=2
+-Add suitable istructions to MR_kCenterOutliers, so to measure and print separately the time required by Round 1 and Round 2. Please be aware of the Spark's lazy evaluation.
+-Write the code for method computObjective. It is important that you keep in mind that the input dataset may be very large and that, in this case,  any structure of the size of this dataset may not fit into local memory.
